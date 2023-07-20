@@ -7,9 +7,13 @@ Paste your code for fetch requests here once you finish each task.
 /*
   Make a request with fetch request to GET /posts and print the response
   components to the console.
+
 */
 
-// Your code here
+//Your code here
+fetch('/posts')
+  .then(res => res.json())
+  .then(resBody => console.log(resBody))
 
 
 
@@ -18,5 +22,13 @@ Paste your code for fetch requests here once you finish each task.
   Make a request with fetch request to POST /posts and print the response
   components to the console.
 */
-
+fetch('/posts', {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: "New Post!"
+  })
+}).then(res => console.log(res))
 // Your code here
